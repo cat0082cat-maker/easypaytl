@@ -181,13 +181,13 @@ export default function App() {
               <tbody>
                 {calculation.plans.map((plan) => (
                   <tr key={plan.months}>
-                    <td><strong>{plan.months} เดือน</strong></td>
-                    <td>{formatBaht(calculation.downPayment)}</td>
-                    <td>{formatBaht(calculation.financedAmount)}</td>
-                    <td>{plan.multiplier.toFixed(2)}x</td>
-                    <td className="monthly-payment">{formatBaht(plan.monthlyPayment)}</td>
-                    <td>{formatBaht(plan.contractTotal)}</td>
-                    <td>{formatBaht(plan.merchantCommission)}</td>
+                    <td data-label="งวดที่"><strong>{plan.months} เดือน</strong></td>
+                    <td data-label="ยอดดาวน์">{formatBaht(calculation.downPayment)}</td>
+                    <td data-label="ทุนเช่าซื้อ">{formatBaht(calculation.financedAmount)}</td>
+                    <td data-label="ตัวคูณดอกเบี้ย">{plan.multiplier.toFixed(2)}x</td>
+                    <td data-label="ยอดผ่อนต่อเดือน" className="monthly-payment">{formatBaht(plan.monthlyPayment)}</td>
+                    <td data-label="ราคารวมสัญญา">{formatBaht(plan.contractTotal)}</td>
+                    <td data-label="ค่านายหน้าร้านค้า">{formatBaht(plan.merchantCommission)}</td>
                   </tr>
                 ))}
               </tbody>

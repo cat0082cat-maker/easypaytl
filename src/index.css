@@ -261,6 +261,13 @@ footer {
 @media (max-width: 1140px) {
   .calculator-layout {
     grid-template-columns: 1fr;
+    width: min(100%, 900px);
+    margin-inline: auto;
+  }
+
+  .form-panel {
+    width: min(100%, 620px);
+    margin-inline: auto;
   }
 }
 
@@ -275,9 +282,12 @@ footer {
   }
 
   .site-header {
+    flex-direction: column;
+    justify-content: center;
     gap: 11px;
     padding: 13px 14px;
     border-radius: 14px;
+    text-align: center;
   }
 
   .site-header img {
@@ -292,12 +302,112 @@ footer {
     border-radius: 14px;
   }
 
+  .panel-heading {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .form-body {
+    align-items: center;
+    padding: 16px 14px;
+  }
+
+  .field,
+  .down-payment-row,
+  .selection-summary,
+  .clear-button {
+    width: 100%;
+  }
+
+  .field > span {
+    text-align: center;
+  }
+
+  .field input,
+  .field select {
+    height: 48px;
+    text-align: center;
+    font-size: 1rem;
+  }
+
   .down-payment-row {
     grid-template-columns: 1fr;
   }
 
   .table-wrap {
-    padding: 8px;
+    overflow: visible;
+    padding: 10px;
+  }
+
+  .rate-table {
+    min-width: 0;
+  }
+
+  .rate-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .rate-table,
+  .rate-table tbody,
+  .rate-table tr,
+  .rate-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .rate-table tbody {
+    display: grid;
+    gap: 12px;
+  }
+
+  .rate-table tbody tr {
+    overflow: hidden;
+    padding: 8px 14px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(3, 13, 56, 0.06);
+  }
+
+  .rate-table td,
+  .rate-table td:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 10px 2px;
+    text-align: right;
+    white-space: normal;
+  }
+
+  .rate-table td::before {
+    content: attr(data-label);
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 750;
+    text-align: left;
+  }
+
+  .rate-table td:first-child {
+    justify-content: center;
+    padding: 8px 2px 12px;
+    color: #fff;
+    background: var(--blue);
+    border-radius: 9px;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .rate-table td:first-child::before {
+    display: none;
+  }
+
+  .rate-table tbody tr:hover {
+    background: #fff;
   }
 }
 
