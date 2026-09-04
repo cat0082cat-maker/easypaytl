@@ -1,0 +1,43 @@
+{
+  "hosting": {
+    "public": "firebase-dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "redirects": [
+      {
+        "source": "/",
+        "destination": "/finance/calculator/",
+        "type": 302
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/finance/calculator/**",
+        "destination": "/finance/calculator/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "/finance/calculator/index.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, no-store, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "/finance/calculator/assets/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      }
+    ]
+  }
+}

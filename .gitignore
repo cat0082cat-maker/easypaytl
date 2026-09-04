@@ -10,6 +10,7 @@ firebase-debug.log
 
 node_modules/
 dist/
+firebase-dist/
 dist-ssr
 .firebase/
 .env
