@@ -14,7 +14,6 @@ const commissionRate = 0.15;
 const formatNumber = (value) => Number(value || 0).toLocaleString('th-TH');
 
 export default function App() {
-  const [device, setDevice] = useState('iPhone');
   const [condition, setCondition] = useState('ใหม่');
   const [downPaymentPercent, setDownPaymentPercent] = useState(15);
   const [sellingPriceInput, setSellingPriceInput] = useState('');
@@ -46,7 +45,6 @@ export default function App() {
   };
 
   const handleClear = () => {
-    setDevice('iPhone');
     setCondition('ใหม่');
     setDownPaymentPercent(15);
     setSellingPriceInput('');
@@ -64,17 +62,6 @@ export default function App() {
         <div className="calculator-card">
           <div className="card-header-gradient"><span className="card-header-icon">🧮</span><span>เครื่องคำนวณเรทผ่อนชำระ</span></div>
           <div className="card-body">
-            <div className="form-group">
-              <label className="form-label">ประเภทอุปกรณ์</label>
-              <div className="tab-container">
-                {['iPhone', 'Android'].map((item) => (
-                  <button key={item} type="button" className={`tab-btn ${device === item ? 'active' : ''}`} onClick={() => { setDevice(item); resetResult(); }}>
-                    {item === 'iPhone' ? 'iPhone / iPad' : item}
-                  </button>
-                ))}
-              </div>
-            </div>
-
             <div className="form-group">
               <label className="form-label">หมวดหมู่สินค้า</label>
               <div className="tab-container">
@@ -117,7 +104,7 @@ export default function App() {
                   <div className="transfer-highlight-box">
                     <div className="transfer-label">ยอดจัดไฟแนนซ์</div>
                     <div className="transfer-value">{formatNumber(result.financingAmount)} <span className="currency-label">บาท</span></div>
-                    <div className="transfer-subinfo">{device} · {condition} · เงินดาวน์ {downPaymentPercent}%</div>
+                    <div className="transfer-subinfo">iPhone / iPad · {condition} · เงินดาวน์ {downPaymentPercent}%</div>
                   </div>
                   <div className="result-details-list">
                     <div className="result-detail-item"><span className="detail-label">ราคาขาย</span><span className="detail-value">{formatNumber(result.sellingPrice)} บาท</span></div>
